@@ -1,27 +1,28 @@
-# Boa tarde professor.
 
-# Perguntei no grupo relacionado a atividade de docker que você passou, e vi que era possível fazer por linha de comando,
-# portanto loguei no docker playground que você passou anteriormente e fiz as atividades por lá, listarei abaixo os comandos
-# utilizados e a breve explicação (dessa forma fixo melhor o conteúdo, já que não tenho tanta experiência com o docker)
+Boa tarde professor.
 
-# 1 - baixar as imagens necessárias para a criação dos containers, sendo elas o mysql e o nginx
+Perguntei no grupo relacionado a atividade de docker que você passou, e vi que era possível fazer por linha de comando,
+portanto loguei no docker playground que você passou anteriormente e fiz as atividades por lá, listarei abaixo os comandos
+utilizados e a breve explicação (dessa forma fixo melhor o conteúdo, já que não tenho tanta experiência com o docker)
 
-docker pull nginx
-docker pull mysql
+1-baixar as imagens necessárias para a criação dos containers, sendo elas o mysql e o nginx
 
-# agora vamos executar o primeiro container do mysql
+`docker pull nginx`
 
-docker run -d --name mysql-docker-container -e MYSQL_ROOT_PASSWORD=docker1234 mysql
+`docker pull mysql`
 
-# para testar o container acima, podemos usar o comando abaixo, caso tudo esteja correto,
-# uma mensagem relacionada ao mysql será exibida
+2 - agora vamos executar o primeiro container do mysql, para isso:
 
-docker exec -it mysql-docker-container mysql -p 
+`docker run -d --name mysql-docker-container -e MYSQL_ROOT_PASSWORD=docker1234 mysql`
 
-# agora, executar o container do nginx, para isso utilizaremos o comando abaixo
+para testar o container acima, podemos usar o comando abaixo, caso tudo esteja correto,
+uma mensagem relacionada ao mysql será exibida
 
-docker run -d --name nginx-container -p 80:80 nginx
+`docker exec -it mysql-docker-container mysql -p `
 
-# para testar o container no docker playground, cliquei na opção 'open port' e coloquei a porta 80, e 
-# a mensagem padrão do nginx foi exibida.
+3 - agora, executar o container do nginx, para isso utilizaremos o comando abaixo:
 
+`docker run -d --name nginx-container -p 80:80 nginx`
+
+para testar o container no docker playground, cliquei na opção 'open port' e coloquei a porta 80, e 
+a mensagem padrão do nginx foi exibida.
